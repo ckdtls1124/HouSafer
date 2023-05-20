@@ -1,5 +1,6 @@
 package com.project.HouSafer.Entity.Contract;
 
+import com.project.HouSafer.Entity.Damage.Damage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,7 +32,10 @@ public class Contract {
     @Column(nullable = false)
     private String contractCondition;
 
-//    피해 사례 테이블 참조
+//    피해 사례 테이블과 일대다 관계
+    @ManyToOne
+    @JoinColumn(name = "damage_id")
+    private Damage damageId;
 
 
 

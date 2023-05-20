@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CollectionId;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
@@ -14,15 +12,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Setter
 @Getter
-@Table(name = "EvidenceFiles")
-public class EvidenceFiles {
+@Table(name = "Certificate")
+public class Certificate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long EvidenceFilesId;
+    private Long certificateId;
 
+//    증명서 파일
 //    @Column(nullable = false)
-//    private MultipartFile evidenceFile;
+//    private MultipartFile certificateFile;
 
     @ManyToOne
     @JoinColumn(name = "experts_id")

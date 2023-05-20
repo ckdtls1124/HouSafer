@@ -1,11 +1,15 @@
 package com.project.HouSafer.Entity.Damage;
 
+import com.project.HouSafer.Entity.Bookmark.BookmarkContainer;
+import com.project.HouSafer.Entity.Contract.Contract;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -31,8 +35,8 @@ public class Damage{
     private DamageStatus damageStatus;
 
 //    사기 유형 테이블을 참조 하여 사기유형
-    @Column(nullable = false)
-    private String damageType;
+//    @Column(nullable = false)
+//    private String damageType;
 
     @Column(nullable = false)
     private String damageDetail;
@@ -47,6 +51,18 @@ public class Damage{
 //    피해지원 신청 여부(Yes / No)
     @Column(nullable = false)
     private String damageSupportStatus;
+
+//     피해 사례 증거(DamageProof)와 다대일 관계 설정
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<DamageProof> damageProofFiles = new ArrayList<>();
+
+//    계약 테이블과 다대일 관계
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<Contract> contractFileEachDamage = new ArrayList<>();
+
+//    북마크 컨테이너 테이블과 다대일 관계
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<BookmarkContainer> eachBookmarkContainer = new ArrayList<>();
 
 
 }

@@ -44,7 +44,7 @@ public class Experts {
 
 //    증빙 서류 입력을 위한 MultipartFile 데이터의 정보 입력
     @OneToMany(mappedBy = "expertsId", cascade = CascadeType.ALL)
-    private List<EvidenceFiles> expertsEvidenceFiles=new ArrayList<>();
+    private List<Certificate> expertsCertificateFiles =new ArrayList<>();
 
 
 
