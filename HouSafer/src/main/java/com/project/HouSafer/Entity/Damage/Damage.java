@@ -2,10 +2,13 @@ package com.project.HouSafer.Entity.Damage;
 
 import com.project.HouSafer.Entity.Bookmark.BookmarkContainer;
 import com.project.HouSafer.Entity.Contract.Contract;
+import com.project.HouSafer.Entity.Experts.ExpertsComment;
+import com.project.HouSafer.Entity.Fraud.Fraud;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -48,7 +51,7 @@ public class Damage{
     private String damageCost;
 
 
-//    피해지원 신청 여부(Yes / No)
+//    피해지원 신청 여부에 대해서 Yes or No를 표시
     @Column(nullable = false)
     private String damageSupportStatus;
 
@@ -64,5 +67,12 @@ public class Damage{
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
     private List<BookmarkContainer> eachBookmarkContainer = new ArrayList<>();
 
+//    사기 유형 테이블과 다대일 관계
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<Fraud> eachFraud = new ArrayList<>();
+
+//    전문가 의견 테이블과 다대일 관계
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<ExpertsComment> eachExpertsComment = new ArrayList<>();
 
 }
