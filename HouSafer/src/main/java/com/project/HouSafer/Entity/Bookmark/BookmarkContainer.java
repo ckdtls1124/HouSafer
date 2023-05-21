@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -25,9 +27,8 @@ public class BookmarkContainer {
     private Bookmark bookmarkId;
 
 
-//    피해 사례 테이블과 일대다 관계
-    @ManyToOne
-    @JoinColumn(name= "damage_id")
-    private Damage damageId;
 
+    //    피해사례 테이블과 다대일 관계
+    @OneToMany(mappedBy = "bookmarkContainerId", cascade = CascadeType.ALL)
+    private List<Damage> eachBookmarkContainer = new ArrayList<>();
 }

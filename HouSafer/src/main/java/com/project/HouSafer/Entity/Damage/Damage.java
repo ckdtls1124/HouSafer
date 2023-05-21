@@ -4,6 +4,7 @@ import com.project.HouSafer.Entity.Bookmark.BookmarkContainer;
 import com.project.HouSafer.Entity.Contract.Contract;
 import com.project.HouSafer.Entity.Experts.ExpertsComment;
 import com.project.HouSafer.Entity.Fraud.Fraud;
+import com.project.HouSafer.Entity.Member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -63,9 +64,10 @@ public class Damage{
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
     private List<Contract> contractFileEachDamage = new ArrayList<>();
 
-//    북마크 컨테이너 테이블과 다대일 관계
-    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
-    private List<BookmarkContainer> eachBookmarkContainer = new ArrayList<>();
+//    북마크 컨테이너 테이블과 일대다 관계
+    @ManyToOne
+    @JoinColumn(name= "bookmarkContainer_id")
+    private BookmarkContainer bookmarkContainerId;
 
 //    사기 유형 테이블과 다대일 관계
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
@@ -74,5 +76,10 @@ public class Damage{
 //    전문가 의견 테이블과 다대일 관계
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
     private List<ExpertsComment> eachExpertsComment = new ArrayList<>();
+
+//    회원 테이블과 일대다 관계
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member memberId;
 
 }
