@@ -1,0 +1,48 @@
+@import url(reset.css);
+/* footer */
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #1398f6;
+  background: #1398f6;
+  color: #fff;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.footer-terms-wrap {
+  width: calc(100% - 140px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-terms-wrap > .terms {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-terms-wrap > .terms a {
+  position: relative;
+  color: #fff;
+}
+.footer-terms-wrap > .terms a::after {
+  content: "";
+  width: 1px;
+  height: 13px;
+  background: #fff;
+  position: absolute;
+  top: 5px;
+  right: -8px;
+}
+.footer-terms-wrap > .terms a:last-child::after {
+  content: unset;
+}
+
+.footer-terms-wrap > .footer-content > div {
+  margin-top: 8px;
+}
