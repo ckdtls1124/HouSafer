@@ -46,8 +46,6 @@ public class Damage{
     private String damageDetail;
 
 //    조회수
-
-
     @Column(nullable = false)
     private String damageCost;
 
@@ -55,6 +53,10 @@ public class Damage{
 //    피해지원 신청 여부에 대해서 Yes or No를 표시
     @Column(nullable = false)
     private String damageSupportStatus;
+
+//    피해매물 주소 => 지도 api에 활용, 선택가능
+    @Column
+    private String damageAddress;
 
 //     피해 사례 증거(DamageProof)와 다대일 관계 설정
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
