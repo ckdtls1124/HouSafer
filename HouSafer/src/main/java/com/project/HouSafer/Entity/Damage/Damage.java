@@ -66,10 +66,9 @@ public class Damage{
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
     private List<Contract> contractFileEachDamage = new ArrayList<>();
 
-//    북마크 컨테이너 테이블과 일대다 관계
-    @ManyToOne
-    @JoinColumn(name= "bookmarkContainer_id")
-    private BookmarkContainer bookmarkContainerId;
+//    북마크 컨테이너 테이블과 다대일 관계
+    @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)
+    private List<BookmarkContainer> eachbookmarkContainer = new ArrayList<>();
 
 //    사기 유형 테이블과 다대일 관계
     @OneToMany(mappedBy = "damageId", cascade = CascadeType.ALL)

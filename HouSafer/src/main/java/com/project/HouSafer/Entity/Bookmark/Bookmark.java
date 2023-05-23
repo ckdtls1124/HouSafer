@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -27,10 +29,8 @@ public class Bookmark {
     private Member memberId;
 
 
-// 북마크 컨테이너 테이블과 일대일 관계 / 복마크 테이블에서 외래키 설정
-    @OneToOne
-    @JoinColumn(name = "bookmarkContainer_id")
-    @UniqueElements
-    private BookmarkContainer bookmarkContainerId;
+// 북마크 컨테이너 테이블과 다대일 관계
+    @OneToMany(mappedBy = "bookmarkId", cascade = CascadeType.ALL)
+    private List<BookmarkContainer> bookmarkContainerList = new ArrayList<>();
 
 }
