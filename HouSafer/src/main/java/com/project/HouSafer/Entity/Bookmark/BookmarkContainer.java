@@ -22,13 +22,14 @@ public class BookmarkContainer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookmarkContainerId;
 
-//    북마크 테이블과 일대일 관계 / 북마크 테이블에서 외래키 설정
-    @OneToOne(mappedBy = "bookmarkContainerId")
+    //    피해사례 테이블과 일대다 관계
+    @ManyToOne
+    @JoinColumn(name = "damage_id")
+    private Damage damageId;
+
+    //    북마크 테이블과 일대다 관계
+    @ManyToOne
+    @JoinColumn(name = "bookmark_id")
     private Bookmark bookmarkId;
 
-
-
-    //    피해사례 테이블과 다대일 관계
-    @OneToMany(mappedBy = "bookmarkContainerId", cascade = CascadeType.ALL)
-    private List<Damage> eachBookmarkContainer = new ArrayList<>();
 }
