@@ -21,6 +21,9 @@
                 <!-- 지도영역 -->
                 <div id="map"></div>
                 <script>
+                    // 지도영역 설정
+                    const mapCon = document.getElementById('map');
+            
                     // 초기값 설정
                     var mapOptions = {
                         center: new naver.maps.LatLng(37.3595704, 127.105399),
@@ -28,12 +31,13 @@
                     };
                     
                     // 지도 생성
-                    var map = new naver.maps.Map('map', mapOptions);
+                    var map = new naver.maps.Map(mapCon, mapOptions);
                     </script>
             </div>
-<!--             
+            
             <div class="con2">
-            </div> -->
+                <!-- 피해사례 게시판 -->
+            </div>
 
         </div>
         <!-- footer : 공통요소로 대체 예정 -->

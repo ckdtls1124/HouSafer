@@ -25,6 +25,7 @@
     width: 100%;
     border: 1px solid;
     display: flex;
+    justify-content: center;
     gap: 70px;
     align-items: center;
     padding: 50px;
@@ -33,8 +34,13 @@
 
 .container .con1{
     border: 1px solid;
+    width: 500px;
+    height: 500px;
+}
+
+.container .con1 #map{
     width: 100%;
-    height: 800px;
+    height: 100%;
 }
 
 .container .con2{
