@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/Damage/Damage.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 피해 사례 게시판 -->
+
+    <div class="damage-board-container">
+        <div class="first">
+            <h1 class="damage-types-title">
+                사기 유형
+            </h1>
+            <div class="damage-types-content">
+                <ul>
+                    <!-- 각 종류는 업데이트가 되어 추가가 되고,
+                        각 종류별로 참조된 사건 건수를 명시한다.
+                    ex) #전출신고 악용(22건) -->
+                    <li><a href="#">#전출신고 악용(22건)</a></li>
+                    <li><a href="#">#가짜임대인(120건)</a></li>
+                    <li><a href="#">#중개사 사기(15건)</a></li>
+                    <li><a href="#">#임대인 체납(10건)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="second">
+            <div class="damage-search-criteria-range-container">
+                <ul class="contract-search-criterium">
+                    <li class="contract-moeny-criteria">
+                        <label for="contract-money">계약금액</label>
+                        <input type="range" name="contract-money" id="contract-money" minlength="5" maxlength="10">
+                    </li>
+                    <li class="contract-term-criteria">
+                        <label for="contract-term">계약기간</label>
+                        <input type="range" name="contract-term" id="contract-term" minlength="5" maxlength="10">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="case-search-title-content-container">
+                <!-- 제목별, 내용별 찾기 -->
+                <div class="case-search-labels-con">
+                    <select name="case-search-labels" id="case-search-labels">
+                        <option value="title">제목별</option>
+                        <option value="content">내용별</option>
+                    </select>
+                </div>
+                <form class="case-search-input-container" method="get" action="">
+                    <input type="text" name="c\ase-search-input" id="case-search-input" placeholder="검색어를 입력해주세요">
+                    <button>검색</button>
+                </form>
+            </div>
+        </div>
+        <div class="third">
+            <table class="all-cases-table">
+                <thead>
+                    <tr>
+                        <th colspan="1">번호</th>
+                        <th colspan="2">
+                            <select name="area" id="area">
+                                <option value="*">-지역-</option>
+                                <option value="1">서울</option>
+                                <option value="2">부산</option>
+                                <option value="3">대전</option>
+                                <option value="4">대구</option>
+                                <option value="5">광주</option>
+                            </select>
+                        </th>
+                        <th colspan="1">
+                            <select name="status" id="status">
+                                <option value="*">-진행상황-</option>
+                                <option value="1">진행중</option>
+                                <option value="2">진행완료</option>
+                                <option value="3">미정</option>
+                            </select>
+                        </th>
+                        <th colspan="7">제목</th>
+                        <th colspan="1">작성자</th>
+                        <th colspan="3">사기유형</th>
+                        <th colspan="1">조회</th>
+                    </tr>
+                </thead>
+                <!-- 예시 -->
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td colspan="2">부산</td>
+                        <td>진행중</td>
+                        <td colspan="7"> <a href="#"> 몇 달 뒤 21년 4월쯤에 등기부등본 열람을 했는데.... 2월,3월달 가압류가 잡혀있는거에요 </a> </td>
+                        <td>홍길동</td>
+                        <!-- 사기 유형은 DB에서 추출 -->
+                        <td colspan="3" style="padding: 0 2rem;">
+                            <a href="#"> #가짜임대인 </a>
+                            <a href="#"> #전출신고 </a>
+                            <a href="#"> #중개사사기</a>
+                        </td>
+                        <td>23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

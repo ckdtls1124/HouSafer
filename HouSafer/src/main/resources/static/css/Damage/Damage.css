@@ -1,0 +1,140 @@
+@import url(/resources/static/css/common/reset.css);
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* 약속된 색깔 모음집 */
+:root {
+	--blue-color: #1398f6;
+	--container-width: 80%;
+}
+
+.damage-board-container {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 10%;
+}
+
+/* 사기 유형 항목 - 제목, 사기 유형 종류 */
+.damage-board-container .first {
+	box-sizing: border-box;
+	border: 1px solid black;
+
+	width: var(--container-width);
+	height: auto;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+.damage-board-container .first .damage-types-title{
+	/* box-sizing: border-box;
+	border: 1px solid red; */
+
+	display: flex;
+	justify-content: flex-start;
+
+	height: 50px;
+	line-height: 50px;
+}
+
+.damage-board-container .first .damage-types-content{
+	/* box-sizing: border-box;
+	border: 1px solid green; */
+
+	display: flex;
+	justify-content: center;
+
+	height: auto;
+}
+.damage-board-container .first .damage-types-content ul{
+	display: flex;
+	
+}
+.damage-board-container .first .damage-types-content ul>li{
+	padding: 0 1rem;
+
+	height: 2rem;
+	line-height: 2rem;
+}
+
+/* 계약기간, 계약금액, 검색어 */
+.damage-board-container .second{
+	/* box-sizing: border-box;
+	border: 1px solid red;	 */
+	
+	display: flex;
+	justify-content: space-between;
+	
+	
+	width: var(--container-width);
+	height: auto;
+}
+.damage-board-container .second .damage-search-criteria-range-container{
+	/* box-sizing: border-box;
+	border: 1px solid brown; */
+	
+	width: auto;
+	height: auto;
+}
+.damage-board-container .second .damage-search-criteria-range-container .contract-search-criterium{
+	display: flex;
+	
+	column-gap: 1rem;
+	
+	width: auto;
+	height: 3rem;
+	line-height: 3rem;
+}
+.damage-board-container .second .case-search-title-content-container{
+	display: flex;
+	
+	column-gap: 1rem;
+	
+	width: auto;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+/*  모든 사건 사고 테이블*/
+.damage-board-container .third{
+	box-sizing: border-box;
+	border: 1px solid blue;
+	
+	width: var(--container-width);
+	height: auto;
+}
+.damage-board-container .third .all-cases-table{
+	
+	width: 100%;
+	height: auto;
+}
+.damage-board-container .third .all-cases-table, th, td {
+	box-sizing: border-box;
+	border: 1px solid black;
+
+	height: 2rem;
+	line-height: 2rem;
+}
+
+.damage-board-container .third .all-cases-table thead{
+	background-color: var(--blue-color);
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
