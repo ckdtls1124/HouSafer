@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    background-color: grey;
+    width: 100%;
+    text-align: center;
+}
+
+.footer{
+    background-color: grey;
+    width: 100%;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.container .con1{
+    border: 1px solid;
+    width: 100%;
+    height: 800px;
+}
+
+.container .con2{
+    border: 1px solid;
+    width: 500px;
+    height: 500px;
+}
