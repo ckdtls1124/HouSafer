@@ -1,0 +1,73 @@
+/* fb = 굵은 폰트 700 ~ 900 */
+/* fl = 얇은 폰트 300 ~ 500 */
+.fb24 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.fb28 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+}
+.fl20 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.fl18 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* flex 상황별 클래스 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* 회색을 사용하는 스타일 */
+
+.greyBox {
+  background: #e8e8e8;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
+  height: 185px;
+}
+
+.greyInput {
+  background: #8b8b8b;
+  opacity: 0.1;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* 버튼 스타일 초기화 */
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+}

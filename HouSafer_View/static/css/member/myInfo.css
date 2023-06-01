@@ -1,0 +1,55 @@
+@import url(/static/css/common/reset.css);
+@import url(/static/css/common/header.css);
+@import url(/static/css/common/footer.css);
+@import url(/static/css/member/memberCustom.css);
+/* myInfo */
+.myPage {
+  width: 100%;
+  height: auto;
+}
+
+.inner {
+  width: 100%;
+  height: auto;
+}
+
+.inner .banner {
+  width: 100%;
+  height: 250px;
+  background-color: #1398f6;
+  position: relative;
+  z-index: -1;
+}
+
+/* 회원 정보 스타일 */
+
+.inner .contents {
+  width: 70%;
+  height: 330px;
+  margin: 0 auto;
+  padding: 56px;
+  background-color: #fff;
+  position: relative;
+  top: -160px;
+  z-index: 1;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+}
+
+.user-info-area {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.show-user-info {
+  width: 100%;
+}
+.show-user-info ul li {
+  margin-bottom: 20px;
+}
+.show-user-info ul li > span {
+  flex: 1;
+}
+.show-user-info ul li > input {
+  flex: 3;
+}

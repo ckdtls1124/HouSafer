@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/member/myPage.css" />
+    <title>myPage</title>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="#" class="logo"
+          ><img src="/static/img/common/header/logo.png" alt="header_logo"
+        /></a>
+        <nav>
+          <ul>
+            <li class="menu">
+              <a href="#">menu1</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu2</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu3</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu4</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu5</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="button-wrapper">
+          <a class="profile">
+            <img src="/static/img/common/header/profile.png" alt="" />
+          </a>
+          <button class="register">로그아웃</button>
+          <!-- <button class="register">회원가입</button> -->
+          <!-- <button class="login">로그인</button> -->
+        </div>
+      </div>
+    </header>
+
+    <div class="myPage">
+      <div class="inner">
+        <div class="banner"></div>
+        <div class="contents">
+          <!-- 회원 이름 불러와서 넣을곳 -->
+
+          <!-- 회원정보 영역 -->
+          <div class="info-box">
+            <div class="info-title">
+              <h3 class="fb24 flex-left">
+                회원정보
+                <img
+                  class="arrow"
+                  src="/static/img/member/right-arrow.png.png"
+                  alt="오른쪽 화살표 이미지"
+                />
+              </h3>
+            </div>
+            <div class="user-info greyBox flex-center">
+              <p>이름, 이메일, 전화번호 정도만</p>
+            </div>
+            <div class="info-title">
+              <h3 class="fb24">나의 활동</h3>
+            </div>
+            <div class="my-action greyBox flex-space">
+              <div class="context">
+                <p class="context-title fl18 flex-col">
+                  작성글(피해사례)
+                  <b class="context-count">2개</b>
+                </p>
+              </div>
+              <div class="context">
+                <p class="context-title fl18 flex-col">
+                  북마크
+                  <b class="context-count">6개</b>
+                </p>
+              </div>
+              <div class="context">
+                <p class="context-title fl18 flex-col">
+                  피해지원 신청
+                  <b class="context-count">1건</b>
+                </p>
+              </div>
+            </div>
+            <div class="info-title">
+              <h3 class="fb24">추가 피해지원 신청</h3>
+            </div>
+            <div class="more flex-center">
+              <div class="mental-help greyBox flex-space">
+                <p>심리상담 지원</p>
+                <img
+                  class="arrow"
+                  src="/static/img/member/right-arrow.png.png"
+                  alt="오른쪽 화살표 이미지"
+                />
+              </div>
+              <div class="row-help greyBox flex-space">
+                <p>법률상담 지원</p>
+                <img
+                  class="arrow"
+                  src="/static/img/member/right-arrow.png.png"
+                  alt="오른쪽 화살표 이미지"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="inner">
+        <!-- <a href=""
+          ><img src="/static/img/common/footer/logo.png" alt="footer_logo"
+        /></a> -->
+        <div class="footer-terms-wrap">
+          <div class="terms">
+            <a href="">이용약관</a>
+            <a href="">개인정보처리방침</a>
+            <a href="">사업자정보확인</a>
+          </div>
+
+          <div class="footer-content">
+            <div>02-1263-1462</div>
+            <div>서울 노원구 상계로3길 21 3층,6층</div>
+            <div>@copyright 2023 by HouSafer All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

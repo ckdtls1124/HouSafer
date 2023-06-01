@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myInfo</title>
+    <link rel="stylesheet" href="/static/css//member/myInfo.css" />
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a href="#" class="logo"
+          ><img src="/static/img/common/header/logo.png" alt="header_logo"
+        /></a>
+        <nav>
+          <ul>
+            <li class="menu">
+              <a href="#">menu1</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu2</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu3</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu4</a>
+            </li>
+            <li class="menu">
+              <a href="#">menu5</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="button-wrapper">
+          <a class="profile">
+            <img
+              src="/static/img/common/header/profile.png"
+              alt="로그인상태 이미지"
+            />
+          </a>
+          <button class="register">로그아웃</button>
+          <!-- <button class="register">회원가입</button> -->
+          <!-- <button class="login">로그인</button> -->
+        </div>
+      </div>
+    </header>
+
+    <div class="myInfo">
+      <div class="inner">
+        <div class="banner"></div>
+        <div class="contents">
+          <div class="user-info-area">
+            <div class="user-info-title">
+              <h2 class="fb28">회원정보</h2>
+            </div>
+            <div class="show-user-info">
+              <ul>
+                <li class="flex-space">
+                  <span>이름</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+                <li class="flex-space">
+                  <span>이메일</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+                <li class="flex-space">
+                  <span>생년월일</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+                <li class="flex-space">
+                  <span>성별</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+                <li class="flex-space">
+                  <span>휴대전화</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+                <li class="flex-space">
+                  <span>주소</span>
+                  <input class="greyInput" type="text" readonly />
+                </li>
+              </ul>
+              <div class="button-area">
+                <button>정보수정</button>
+                <button>회원탈퇴</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="inner">
+        <!-- <a href=""
+          ><img src="/static/img/common/footer/logo.png" alt="footer_logo"
+        /></a> -->
+        <div class="footer-terms-wrap">
+          <div class="terms">
+            <a href="">이용약관</a>
+            <a href="">개인정보처리방침</a>
+            <a href="">사업자정보확인</a>
+          </div>
+
+          <div class="footer-content">
+            <div>02-1263-1462</div>
+            <div>서울 노원구 상계로3길 21 3층,6층</div>
+            <div>@copyright 2023 by HouSafer All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

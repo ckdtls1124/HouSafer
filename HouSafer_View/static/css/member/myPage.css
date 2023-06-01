@@ -1,0 +1,109 @@
+@import url(/static/css/common/reset.css);
+@import url(/static/css/common/header.css);
+@import url(/static/css/common/footer.css);
+@import url(/static/css/member/memberCustom.css);
+
+/* myPage */
+.myPage {
+  width: 100%;
+  height: auto;
+}
+
+.inner {
+  width: 100%;
+  height: auto;
+}
+
+.inner .banner {
+  width: 100%;
+  height: 250px;
+  background-color: #1398f6;
+  position: relative;
+  z-index: -1;
+}
+
+/* 회원정보 공통 회색 박스 스타일 */
+
+.greyBox:last-child {
+  margin-bottom: 0;
+}
+/* .fb24 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.fl20 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.fl18 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+.info-title {
+  margin-bottom: 10px;
+}
+/* 회원 정보 스타일 */
+
+.inner .contents {
+  width: 70%;
+  height: 710px;
+  margin: 0 auto;
+  padding: 56px;
+  background-color: #fff;
+  position: relative;
+  top: -160px;
+  z-index: 1;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-action .context {
+  flex: 1 0 33%;
+}
+
+.more {
+  gap: 20px;
+}
+
+.mental-help,
+.row-help {
+  flex: 1 0 46%;
+  margin: 0;
+  height: 50px;
+  cursor: pointer;
+}
