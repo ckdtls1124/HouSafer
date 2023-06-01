@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lawyer</title>
+    <link th:href="@{/css/experts/expertsList.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="expertsList">
+        <div class="expertsList-con">
+            <div class="top-menu">
+                <h1 class="title">심리상담가</h1>
+            </div>
+
+            <div class="mid-menu">
+                <div class="mid-menu-con">
+                    <!-- 그리드 -->
+                    <ul>
+                        <th:block th:each="experts: ${expertsList}">
+                            <li class="expertsList">
+                                <!--이미지 있을 때, 없을 때-->
+                                <div class="expertsList-img" th:if="${experts.expertAttach==1}">
+                                    <a href="/">
+                                        <img th:src="@{|/upload/${experts.imgNewName}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="expertsList-img" th:if="${experts.expertAttach==0}">
+                                    <a href="/">
+                                        <img src="https://via.placeholder.com/200x200" alt="">
+                                    </a>
+                                </div>
+                                <div class="expertsList-explain">
+                                    <ul>
+                                        <li>
+                                            <span class="job">심리상담가</span><br>
+                                            <span class="name" th:text="${experts.expertsName}"></span>
+                                        </li>
+                                        <li class="history">
+                                            <span class="brief-history">약력</span>
+                                            <span th:text="${experts.expertsIntroductory}">땡땡 법학대학원 졸</span><br>
+                                            <span th:text="${experts.expertsWorkExperience}">00회 변호사 시험 합격</span><br>
+                                            <span th:text="${experts.expertise}">법무법인 땡땡</span>
+                                        </li>
+                                        <li class="contact">
+                                            <span>T.</span>
+                                            <span th:text="${experts.expertsContactNumber}"></span><br>
+                                            <span>F.</span>
+                                            <span th:text="${experts.expertsContactNumber}"></span><br>
+                                            <span>E.</span>
+                                            <span th:text="${experts.expertsEmail}"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </th:block>
+                    </ul>
+                </div>
+                <div class="page">
+                    <ul>
+                        <li>
+                            <a
+                                    th:href="${expertsList.first} ? '#' : @{/experts/expertsList1?expertsType=psy&(page=${expertsList.number-1})}">이전</a>
+
+                            <th:block th:each="page: ${#numbers.sequence(startPage, endPage)}">
+                                <span th:if="${page == nowPage}" th:text="${page}" th:classappend="class1"></span>
+                                <span th:unless="${page == nowPage}">
+                                        <a th:href="@{/experts/expertsList1?expertsType=psy&(page=${page-1})}"
+                                           th:text="${page}"></a>
+                                    </span>
+                            </th:block>
+
+                            <a
+                                    th:href="${expertsList.last} ? '#' : @{/experts/expertsList1?expertsType=psy&(page=${expertsList.number+1})}">다음</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

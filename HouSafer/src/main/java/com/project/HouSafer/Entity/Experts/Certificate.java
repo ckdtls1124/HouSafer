@@ -23,8 +23,23 @@ public class Certificate {
 //    @Column(nullable = false)
 //    private MultipartFile certificateFile;
 
+    @Column(name = "certificateOldName",nullable = false)
+    public String certificateOldName;
+
+    @Column(name = "certificateNewName",nullable = false)
+    public String certificateNewName;
+
     @ManyToOne
     @JoinColumn(name = "experts_id")
     private Experts expertsId;
 
+    public static Certificate toCertificate(Experts experts, String certificateOldName, String certificateNewName){
+
+        Certificate certificate = new Certificate();
+        certificate.setExpertsId(experts);
+        certificate.setCertificateOldName(certificateOldName);
+        certificate.setCertificateNewName(certificateNewName);
+        return certificate;
+
+    }
 }

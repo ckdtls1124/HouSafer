@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>expert Main</title>
+    <link rel="stylesheet" th:href="@{/css/experts/expertsMain.css}">
+</head>
+
+<body>
+    <div class="expert">
+        <span class="font">전문가의 도움이 필요하신가요?</span>
+        <div class="expert_img">
+            <div class="lawyer">
+                <a th:href="@{/experts/expertsList(expertsType=lawyer)}">
+                    <img th:src="@{/img/lawyer.png}" width="512px" height="512px" alt="img">
+                    <span class="text_1">법률상담</span>
+                </a>
+            </div>
+            <div class="doctor">
+                <a th:href="@{/experts/expertsList(expertsType=psy)}">
+                    <img th:src="@{/img/doctor.png}" width="512px" height="512px" alt="img">
+                    <span class="text_2">심리상담</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

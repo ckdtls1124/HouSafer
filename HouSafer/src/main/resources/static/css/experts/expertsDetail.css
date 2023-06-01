@@ -1,0 +1,119 @@
+@import url(common/reset.css);
+
+.container{
+width: 100%;
+}
+
+.container .expertList{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.container .expertList-con{
+/* flex: 0 1 1600px; */
+}
+
+.container .expertList-con .top-menu{
+padding: 20px;
+box-sizing: border-box;    
+}
+
+.container .expertList-con .mid-menu{
+width: 100%;
+border: 0px solid;
+box-sizing: border-box;   
+}
+
+.container .expertList-con .mid-menu ul li{
+flex: 0 1 auto;
+/* justify-content: space-evenly; */
+/* text-align: center; */
+background-color: #ffffff;
+
+color: #000000;
+gap: 20px;
+box-sizing: border-box;
+}
+
+.container .expertList-con .mid-menu .mid-menu-con{
+display: flex;
+}
+
+/* 이미지 */
+.expertList .expertList-img{
+padding-right: 5px;
+}
+
+/* 설명 */
+.expertList .expertList-explain{
+
+}
+
+/* ul 균등분할 */
+.expertList .expertList-explain ul{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+padding: 0;
+}
+
+.expertList .expertList-explain ul li{
+flex: 1;
+}
+
+/* 직업 */
+.expertList .expertList-explain .job{ 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 12px;
+    
+color: #212121;
+}
+
+/* 이름 */
+.expertList .expertList-explain .name{
+font-family: 'Inter';
+font-style: normal;
+font-weight: bold;
+/* font-weight: 400; */
+font-size: 30px;
+line-height: 24px;
+    
+color: #212121; 
+}
+
+.expertList .expertList-explain li.history{
+display: block;
+font-size: 20px;
+}
+
+/* 약력 */
+.expertList .expertList-explain .history .brief-history{
+display: block;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 12px;
+
+color: #212121;
+}
+
+.expertList .expertList-explain .contact{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 12px;
+
+color: #212121;
+}
+
+/* 밑에 박스 (인사말, 본인 소개) */
+.expertList-explain-detail{
+padding-top: 20px;
+}

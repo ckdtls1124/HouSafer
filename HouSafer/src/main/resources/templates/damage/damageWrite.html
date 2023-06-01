@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>피해 사례 작성</title>
+    <link rel="stylesheet" th:href="@{/css/damage/damageWrite.css}">
+    <!-- 주소 API -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+
+                    // // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                    // if(data.userSelectedType === 'R'){
+                    //     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    //     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    //     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    //         extraAddr += data.bname;
+                    //     }
+                    //     // 건물명이 있고, 공동주택일 경우 추가한다.
+                    //     if(data.buildingName !== '' && data.apartment === 'Y'){
+                    //         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    //     }
+                    //     // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    //     if(extraAddr !== ''){
+                    //         extraAddr = ' (' + extraAddr + ')';
+                    //     }
+                    //     // 조합된 참고항목을 해당 필드에 넣는다.
+                    //     document.getElementById("sample6_extraAddress").value = extraAddr;
+
+                    // } else {
+                    //     document.getElementById("sample6_extraAddress").value = '';
+                    // }
+
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('sample6_postcode').value = data.zonecode;
+                    document.getElementById("address").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("sample6_detailAddress").focus();
+                }
+            }).open();
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hnfjvwqcc4&submodules=geocoder"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="write">
+            <div class="write-title">
+                <div class="write-title-con">
+                    <h2>피해 사례 작성</h2>
+                    <p>피해 사례를 공유하여 피해를 예방하고 전문가의 도움을 받으세요.</p>
+                </div>
+            </div>
+            <div class="write-con">
+                <form th:action="@{/damage/damageWrite}" method="POST" th:object="${DamageDto}"
+                    enctype="multipart/form-data">
+                    <ul>
+                        <div class="map-box">
+                            <div class="left" id="naverMap" style="width:450px; height:350px;"></div>
+                            <div class="right">
+                                <h3>피해 지역</h3>
+                                <p>주소</p>
+                                <div class="search" style="">
+                                    <!--                            <input id="address" type="text" th:field="*{damageZipcode}" placeholder="우편번호" value="">-->
+                                    <!--                            <input id="address" type="text"  placeholder="우편번호" value="">-->
+                                    <input id="sample6_postcode" th:field="*{damageZipcode}" type="text" placeholder="우편번호" value="">
+                                    <input id="button" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                                    <!--                            <input type="text" th:field="*{damageAddress}" id="sample6_address" placeholder="주소"><br>-->
+                                </div>
+                                <div class="result">
+                                    <!--                            <input type="text"  id="sample6_address" placeholder="주소">-->
+                                    <input type="text" th:field="*{damageAddress}" id="address" placeholder="주소">
+                                    <input type="button" id="submit" value="지도 이동">
+                                </div>
+                                <div class="slidecontainer">
+                                    <label th:for="damageCost">
+                                        <h3>피해금액</h3>
+                                    </label>
+                                    <input type="range" min="100" max="50000" step="100" value="25000" class="slider"
+                                        id="myRange" th:field="*{damageCost}">
+                                    <p><span id="value"></span>만원</p>
+                                </div>
+                                <script>
+                                    var slider = document.getElementById("myRange");
+                                    var output = document.getElementById("value");
+                                    output.innerHTML = slider.value;
+
+                                    slider.oninput = function () {
+                                        output.innerHTML = this.value;
+                                    }
+                                </script>
+                            </div>
+                            <script type="text/javascript" th:src="@{/js/naverMap.js}"></script>
+                        </div>
+                        <div class="write-box">
+                            <div class="write-box-con">
+                                
+                                <li class="damageType">
+                                    <label th:for="damageType">사기 유형</label>
+                                    <div class="checkbox">
+                                        <div class="checkbox-grid">
+                                            <input type="checkbox" th:field="*{damageType}" value="a">깡통주택
+                                            <input type="checkbox" th:field="*{damageType}" value="b">가짜임대인
+                                            <input type="checkbox" th:field="*{damageType}" value="c">계약무효
+                                            <input type="checkbox" th:field="*{damageType}" value="d">공인중개사 사기
+                                            <input type="checkbox" th:field="*{damageType}" value="e">임대인변경
+                                            <input type="checkbox" th:field="*{damageType}" value="f">이중계약
+                                            <input type="checkbox" th:field="*{damageType}" value="g">특약조건 불이행
+                                            <input type="checkbox" th:field="*{damageType}" value="h">임대인의 체납
+                                            <input type="checkbox" th:field="*{damageType}" value="i">전출신고 악용
+                                            <input type="checkbox" th:field="*{damageType}" value="j">보증금 미반환
+                                            <input type="checkbox" th:field="*{damageType}" value="k">새로운 사기 방법
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="title">
+                                    <label th:for="damageTitle">제목<span>(10자 이상)</span></label>
+                                    <div class="textarea">
+                                        <textarea type="text" th:field="*{damageTitle}" style="width: 740px; height: 30px;"placeholder="제목을 입력해주세요."></textarea>
+                                    </div>
+                                </li>
+
+                                <li class="damageDetail">
+                                    <label th:for="damageDetail">내용<span>(100자 이상)</span></label>
+                                    <div class="textarea">
+                                        <textarea name="damageDetail" id="damageDetail" cols="100" rows="100" style="width: 740px; height: 200px;" placeholder="내용을 입력하세요."></textarea>
+                                    </div>
+                                </li>
+
+                                <li class="damageSupportStatus">
+                                    <label th:for="damageSupportStatus">신청 여부</label>
+                                    <div class="radio">
+                                        <input type="radio" th:field="*{damageSupportStatus}" value="yes">YES
+                                        <input type="radio" th:field="*{damageSupportStatus}" value="no">NO
+                                    </div>
+                                </li>
+
+                                <li class="submit">
+                                    <input type="submit" value="피해 사례 등록하기">
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
