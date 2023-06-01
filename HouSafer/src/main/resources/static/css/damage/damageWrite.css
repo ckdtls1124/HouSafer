@@ -1,0 +1,194 @@
+@import url(../common/reset.css);
+
+.container{
+    width: 100%;
+}
+
+.container .write{
+    width: 100%;
+}
+
+.container .write .write-title{
+    width: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+.container .write .write-title .write-title-con{
+    flex-direction: column;
+}
+
+.container .write .write-con{
+    width: 100%;
+}
+
+.container .write .write-con .map-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container .write .write-con .map-box .left{
+    margin-right: 20px;
+}
+
+.container .write .write-con .map-box .right{
+
+}
+
+.container .write .write-con .map-box .right .search{
+
+}
+
+
+
+.search{
+    /* position: absolute; */
+     z-index: 1000;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 5px;
+}
+
+.search input#sample6_postcode{
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    border: solid 0px #555;
+    padding: 5px;
+    font-size: 12px;
+    box-sizing: content-box;
+    background: rgba(139, 139, 139, 0.1);
+    border-radius: 5px;
+}
+
+.search input#button {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    border: solid 0px #555;
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: content-box;
+    background: #C6C6C6;
+    border-radius: 5px;
+}
+
+.result input#address{
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    border: solid 0px #555;
+    padding: 5px;
+    font-size: 12px;
+    box-sizing: content-box;
+    background: rgba(139, 139, 139, 0.1);
+    border-radius: 5px;
+}
+
+.result input#submit{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    border: solid 0px #555;
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: content-box;
+    background: #C6C6C6;
+    border-radius: 5px;
+}
+
+/*범위 슬라이더*/
+.slidecontainer {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.slider {
+    -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+    width: 100%; /* 슬라이더 길이 */
+    height: 5px; /* 슬라이더 두께 */
+    border-radius: 5px; /* 슬라이더 모서리를 약간 둥글게 */
+    background: #C6C6C6; /* 슬라이더 색상 */
+    outline: none; /* 슬라이더 테두리 없이 */
+}
+
+/* 슬라이더 핸들(클릭해서 드래그하는 부분) 커스텀 
+(Chrome, Opera, Safari, Edge 브라우저를 위해서는 -webkit-을,
+Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+    appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+    width: 15px; /* 슬라이더 핸들 길이 */
+    height: 15px; /* 슬라이더 핸들 높이 */
+    border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
+    background: #55B5F8; /* 슬라이더 핸들 색상 */
+    cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
+}
+
+
+/*피해 사례 글 작성 */
+.write-box{
+    width: auto;
+    /* height: 900px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.write-box .write-box-con{
+    flex:0 1 750px;
+    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+.write-box-con li{
+    /* display: flex; */
+    border: 1px solid #eeff00;
+    box-sizing: border-box;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.write-box-con li.damageType label{
+    border: 1px solid #09ff00;
+}
+
+.write-box-con li.damageType{
+}
+
+.write-box-con li.damageType .checkbox{
+    border: 1px solid #00f7ff;
+    height: auto;
+    width: auto;
+}
+
+.write-box-con li.damageType .checkbox .checkbox-grid{
+
+
+}
+
+.write-box-con li.title{
+
+}
+
+.write-box-con li.damageDetail{
+
+}
+
+.write-box-con li.damageSupportStatus{
+
+}
+
+.write-box-con li.submit{
+
+}

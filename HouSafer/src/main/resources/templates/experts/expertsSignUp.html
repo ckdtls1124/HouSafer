@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/experts/expertsSignUp.css}" rel="stylesheet" />
+    <title>전문가 회원가입(테스트용)</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup">
+            <div class="signup-con">
+                <form th:action="@{/experts/signup}" method="post" th:object="${ExpertsDto}">
+                    <div class="signup-form">
+                        <ul>
+                            <div class="logo">
+                                <li>
+                                    <!-- <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="logo"></a> -->
+                                </li>
+                            </div>
+
+                            <li>
+                                <h4>이름</h4>
+                                <input type="text" th:field="*{expertsName}" placeholder="이름">
+                            </li>
+
+                            <li>
+                                <h4>이미지</h4>
+                                <input type="file" name="expertAttach">
+                            </li>
+
+                            <li>
+                                <h4>이메일</h4>
+                                <input type="text" th:field="*{expertsEmail}" placeholder="example@gmail.com">
+                                <p th:if="${#fields.hasErrors('expertsEmail')}" th:errorclass="error"
+                                    th:errors="*{expertsEmail}"></p>
+                            </li>
+
+                            <li>
+                                <h4>비밀번호</h4>
+                                <input type="text" th:field="*{expertsPassword}" placeholder="비밀번호를 입력해주세요">
+                                <p th:if="${#fields.hasErrors('expertsPassword')}" th:errorclass="error"
+                                    th:errors="*{expertsPassword}"></p>
+                            </li>
+
+                            <!-- <li>
+                                <h4>비밀번호 확인</h4>
+                                <input type="text" th:field="*{expertsPassword}" placeholder="비밀번호를 확인해주세요">
+                                <p th:if="${#fields.hasErrors('expertsPassword')}" th:errorclass="error" th:errors="*{expertsPassword}"></p>
+                            </li> -->
+
+                            <!-- Entity에 없음 -->
+                            <!-- <li>
+                                <h4>생년월일</h4>
+                                <input type="text" th:field="*{expertsEmail}" placeholder="example@gmail.com">
+                                <p th:if="${#fields.hasErrors('expertsEmail')}" th:errorclass="error" th:errors="*{expertsEmail}"></p>
+                            </li> -->
+
+                            <!-- Entity에 없음 -->
+                            <!-- <li>
+                                <h4>성별</h4>
+                                <input type="text" th:field="*{expertsEmail}" placeholder="example@gmail.com">
+                                <p th:if="${#fields.hasErrors('expertsEmail')}" th:errorclass="error" th:errors="*{expertsEmail}"></p>
+                            </li> -->
+
+                            <li>
+                                <h4>휴대전화</h4>
+                                <input type="text" th:field="*{expertsContactNumber}" maxlength="13" placeholder="01000000000"
+                                    oninput="autoHyphen(this)">
+                                <p th:if="${#fields.hasErrors('expertsContactNumber')}" th:errorclass="error"
+                                    th:errors="*{expertsContactNumber}"></p>
+                            </li>
+
+                            <li>
+                                <h4>주소</h4>
+                                <input type="text" th:field="*{expertsAddress}" placeholder="주소">
+                                <!-- <input type="text" th:field="*{expertsAddress}" id="sample6_postcode" placeholder="우편번호">
+                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <input type="text" th:field="*{expertsAddress1}" id="sample6_address" placeholder="주소"><br>
+                                <input type="text" th:field="*{expertsAddress2}" id="sample6_detailAddress" placeholder="상세주소"> -->
+                            </li>
+
+                            <li>
+                                <h4>증빙서류</h4>
+                                <input type="file" name="certificateFile">
+                            </li>
+
+                            <li>
+                                <input type="submit" value="회원가입">
+                                <button><a th:href="@{/login}">로그인</a></button>
+                                <button><a th:href="@{experts/expertsMain}">전문가 선택</a></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

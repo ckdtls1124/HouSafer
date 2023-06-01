@@ -1,0 +1,59 @@
+@import url(../common/reset.css);
+
+.expert .font{
+width: 740px;
+background: rgba(19,152,246,1);
+opacity: 1;
+position: fixed;
+top: 100px;
+left: 580px;
+overflow: hidden;
+
+color: #ffffff;
+font-family: Inter;
+font-weight: Regular;
+font-size: 50px;
+opacity: 1;
+text-align: center;
+vertical-align: middle;
+}
+
+.expert .expert_img{
+display: flex;
+position: fixed;
+top: 300px;
+left: 300px;
+}
+
+
+.expert .expert_img img{
+padding: 40px 40px 0px 40px;
+}
+
+.expert .expert_img span.text_1{
+/* 법률상담*/
+top: 550px;
+left: 300px;
+
+position: absolute;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+color: #3A3B3C;
+}
+
+.expert .expert_img span.text_2{
+    /* 심리상담*/
+    top: 550px;
+    left: 750px;
+    
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #3A3B3C;
+    }

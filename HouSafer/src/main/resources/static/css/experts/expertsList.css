@@ -1,0 +1,131 @@
+@import url(../common/reset.css);
+
+.container{
+width: 100%;
+}
+
+.container .expertsList{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.container .expertsList-con{
+/* flex: 0 1 1600px; */
+}
+
+.container .expertsList-con .top-menu{
+padding: 20px;
+box-sizing: border-box;    
+}
+
+.container .expertsList-con .top-menu .title{
+background-color: rgba(19,152,246,1);
+color: #ffffff;
+text-align: center;
+padding: 10px;
+
+width: 1000px;
+}
+
+.container .expertsList-con .mid-menu{
+width: 100%;
+border: 0px solid;
+box-sizing: border-box;   
+}
+
+.container .expertsList-con .mid-menu ul{
+justify-content: flex-end;
+}
+
+.container .expertsList-con .mid-menu ul li{
+flex: 0 1 auto;
+/* justify-content: space-evenly; */
+/* text-align: center; */
+background-color: #ffffff;
+
+color: #000000;
+gap: 10px;
+box-sizing: border-box;
+}
+
+.container .expertsList-con .mid-menu .mid-menu-con{
+display: flex;
+}
+
+/* 그리드 */
+.container .expertsList-con .mid-menu .mid-menu-con > ul{
+width: 100%;
+border: 0px solid #ffff00;
+box-sizing: border-box;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 200px 200px 200px 200px;
+grid-auto-rows: minmax(0, 400px);
+gap: 40px;
+}
+
+/* 이미지 */
+.expertsList .expertsList-img{
+padding-right: 5px;
+}
+
+/* 설명 */
+.expertsList .expertsList-explain{
+
+}
+
+.expertsList .expertsList-explain ul li{
+padding-bottom: 15px;
+}
+
+/* 변호사 */
+.expertsList .expertsList-explain .job{ 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+    
+color: #212121;
+}
+
+/* 이름 */
+.expertsList .expertsList-explain .name{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+    
+color: #212121; 
+}
+
+.expertsList .expertsList-explain li.history{
+display: block;
+padding-bottom: 20px;
+}
+
+/* 약력 */
+.expertsList .expertsList-explain .history .brief-history{
+display: block;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+
+color: #212121;
+}
+
+.expertsList .expertsList-explain .contact{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+
+color: #212121;
+
+
+}
